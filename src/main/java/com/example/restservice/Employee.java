@@ -14,13 +14,16 @@ import java.util.Objects;
 @Getter
 @Setter
 @NoArgsConstructor
-@AllArgsConstructor
 public class Employee {
-    @Id
-    @GeneratedValue
-    private Long id;
+
+    private @Id @GeneratedValue Long id;
     private String name;
     private String role;
+
+    public Employee(String name, String role) {
+        this.name = name;
+        this.role = role;
+    }
 
     @Override
     public int hashCode() {
